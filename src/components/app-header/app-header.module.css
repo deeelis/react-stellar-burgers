@@ -25,4 +25,6 @@
 .element {
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: #F2F2F3;
 }

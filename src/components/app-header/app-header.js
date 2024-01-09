@@ -11,21 +11,21 @@ function AppHeader() {
     <header className={`${headerStyle.header} pt-4 pb-4`}>
       <nav className={headerStyle.nav}>
         <div className={headerStyle.container}>
-          <div className={`${headerStyle.element} pt-4 pr-5 pb-4 pl-5 mr-2`}>
+          <a href="#" className={`${headerStyle.element} pt-4 pr-5 pb-4 pl-5 mr-2`}>
             <BurgerIcon type="primary" />
             <p className="ml-2 text text_type_main-small">Конструктор</p>
-          </div>
-          <div className={`${headerStyle.element} pt-4 pr-5 pb-4 pl-5 mr-2`}>
+          </a>
+          <a href="#" className={`${headerStyle.element} pt-4 pr-5 pb-4 pl-5 mr-2`}>
             <ListIcon type="secondary" />
             <p className="ml-2 text text_type_main-small">Лента Заказов</p>
-          </div>
+          </a>
         </div>
         <Logo />
-        <div className={headerStyle.container}>
-          <div className={`${headerStyle.element} pt-4 pr-5 pb-4 pl-5 mr-2`}>
+        <div href="#" className={headerStyle.container}>
+          <a className={`${headerStyle.element} pt-4 pr-5 pb-4 pl-5 mr-2`}>
             <ProfileIcon type="secondary" />
             <p className="ml-2 text text_type_main-small">Личный кабинет</p>
-          </div>
+          </a>
         </div>
       </nav>
     </header>
