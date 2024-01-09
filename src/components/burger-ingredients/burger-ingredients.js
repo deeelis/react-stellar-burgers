@@ -1,3 +1,4 @@
+import React from "react";
 import { useRef, useEffect, useState } from "react";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import ingredientsStyle from "./burger-ingredients.module.css";
@@ -6,6 +7,7 @@ import Modal from "../modal/modal";
 import IngredientDetails from "../ingredient-details/ingredient-details";
 import { useDispatch, useSelector } from "react-redux";
 import { CURRENT_ITEM } from "../../services/actions";
+import { getIngredients } from "../../services/actions/burger-ingredients";
 
 function BurgerIngredients() {
   const [openModal, setOpenModal] = useState(null);
@@ -15,8 +17,8 @@ function BurgerIngredients() {
 
   const currentItem = useDispatch();
 
-  const items = useSelector((state) => {
-    return state.ingredients;
+  let items = useSelector((state) => {
+    return state.ingredients.ingredients;
   });
 
   const [current, setCurrent] = useState("one");

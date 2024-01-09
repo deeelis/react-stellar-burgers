@@ -16,8 +16,10 @@ import { v4 } from "uuid";
 
 function BurgerConstructor() {
   const order = useSelector((state) => {
-    return state.order_ingredients;
+    return state.burgerConstructor.order_ingredients;
   });
+
+  const uniqueId = Date.now();
 
   const dispatch = useDispatch();
   const makeOrder = () => {
@@ -40,6 +42,7 @@ function BurgerConstructor() {
     accept: "ingredient",
     drop: (item) => {
       item.index = v4();
+      item.uniqueId = uniqueId;
       dispatch({
         type: ORDER,
         sum:
@@ -53,7 +56,7 @@ function BurgerConstructor() {
           item.type === "bun"
             ? [...order.ingredients]
             : [...order.ingredients, item],
-        item: item,
+        item,
       });
     },
     collect: (monitor) => ({
@@ -89,7 +92,7 @@ function BurgerConstructor() {
           {order.ingredients.map((item, index) => (
             <BurgerConstructorItem
               moveItem={moveItem}
-              key={item.index}
+              key={item.uniqueId}
               item={item}
               index={index}
             />

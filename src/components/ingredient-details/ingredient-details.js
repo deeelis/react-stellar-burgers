@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 function IngredientDetails() {
   const currentItem = useSelector((state) => {
-    return state.current_item;
+    return state.ingredientsDetailModal.current_item;
   });
   return (
     <section

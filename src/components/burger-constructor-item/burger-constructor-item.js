@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 
 function BurgerConstructorItem({ item, index, moveItem }) {
   const order = useSelector((state) => {
-    return state.order_ingredients;
+    return state.burgerConstructor.order_ingredients;
   });
   const dispatch = useDispatch();
   const ref = useRef(null);

@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 function BurgerIngredient({ type, _id, onClick, name, image, price }) {
   const counts = useSelector((state) => {
-    return state.order_ingredients.counts[_id];
+    return state.burgerConstructor.order_ingredients.counts[_id];
   });
 
   const [{ isDragging }, dragRef] = useDrag({

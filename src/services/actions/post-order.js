@@ -1,4 +1,4 @@
-import { ORDER_NUMBER, RESET_ORDER } from "./index";
+import { ORDER_NUMBER, PENDING, RESET_ORDER, SUCCESS, FAILURE } from "./index";
 
 import { URL } from "../../utils/const";
 export function postOrder(ingredientsList, buns) {
@@ -8,6 +8,9 @@ export function postOrder(ingredientsList, buns) {
   });
   ingredientsListId.push(buns._id);
   return function (dispatch) {
+    dispatch({
+      type: PENDING,
+    });
     fetch(URL + "/orders", {
       method: "POST",
       headers: {
@@ -28,6 +31,13 @@ export function postOrder(ingredientsList, buns) {
             type: ORDER_NUMBER,
             order_number: res.order.number,
           });
+          dispatch({
+            type: SUCCESS,
+          });
+        } else {
+          dispatch({
+            type: FAILURE,
+          });
         }
       })
       .then(() => {
@@ -35,6 +45,11 @@ export function postOrder(ingredientsList, buns) {
           type: RESET_ORDER,
         });
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.log(error.message);
+        dispatch({
+          type: FAILURE,
+        });
+      });
   };
 }

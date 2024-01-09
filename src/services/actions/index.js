@@ -5,3 +5,7 @@ export const DELETE_ITEM = "DELETE_ITEM";
 export const RESET_ORDER = "RESET_ORDER";
 export const ORDER_NUMBER = "ORDER_NUMBER";
 export const MOVE_INGREDIENT = "MOVE_INGREDIENT";
+
+export const PENDING = "PENDING";
+export const SUCCESS = "SUCCESS";
+export const FAILURE = "FAILURE";
