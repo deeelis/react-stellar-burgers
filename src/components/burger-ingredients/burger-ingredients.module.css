@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ingredients {
+  max-height: 712px;
+  overflow-y: scroll;
+}
+
+.ingredients::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ingredients::-webkit-scrollbar-track {
+  background: #2f2f37;
+}
+
+.ingredients::-webkit-scrollbar-thumb {
+  background: #8585ad;
+}
+
+.ingredients__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+  row-gap: 32px;
+}

@@ -1,0 +1,47 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 672px;
+  overflow-y: scroll;
+}
+
+.order::-webkit-scrollbar {
+  width: 8px;
+}
+
+.order::-webkit-scrollbar-track {
+  background: #2f2f37;
+}
+
+.order::-webkit-scrollbar-thumb {
+  background: #8585ad;
+}
+
+.piece {
+  display: flex;
+  flex-direction: row;
+  justify-items: right;
+  align-items: center;
+  justify-content: right;
+}
+
+.sum {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: right;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
