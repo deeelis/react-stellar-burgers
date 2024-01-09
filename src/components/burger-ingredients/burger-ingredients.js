@@ -19,9 +19,9 @@ function BurgerIngredients() {
   
   const [current, setCurrent] = React.useState("one");
   const [currentItem, setCurrentItem] = useState(null);
-  const [buns, setBuns] = useState([]);
-  const [sauces, setSauces] = useState([]);
-  const [mains, setMains] = useState([]);
+  const [buns, setBuns] = useState(null);
+  const [sauces, setSauces] = useState(null);
+  const [mains, setMains] = useState(null);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ function BurgerIngredients() {
         <div>
           <p className="text text_type_main-medium mb-6">Булки</p>
           <section className={`${ingredientsStyle.ingredients__list} ml-4`}>
-            {buns.map((bun) => (
+            {buns && buns.map((bun) => (
               <BurgerIngredient
                 onClick={() => setCurrentItem(bun)}
                 key={bun._id}
@@ -68,7 +68,7 @@ function BurgerIngredients() {
         <div>
           <p className="text text_type_main-medium mt-10 mb-6">Соусы</p>
           <section className={`${ingredientsStyle.ingredients__list} ml-4`}>
-            {sauces.map((sauce) => (
+            {sauces && sauces.map((sauce) => (
               <BurgerIngredient
                 onClick={() => setCurrentItem(sauce)}
                 key={sauce._id}
@@ -82,7 +82,7 @@ function BurgerIngredients() {
         <div>
           <p className="text text_type_main-medium mt-10 mb-6">Начинки</p>
           <section className={`${ingredientsStyle.ingredients__list} ml-4`}>
-            {mains.map((main) => (
+            {mains && mains.map((main) => (
               <BurgerIngredient
                 onClick={() => setCurrentItem(main)}
                 key={main._id}
